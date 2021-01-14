@@ -9,4 +9,5 @@ phases:
   
   build:
     commands:
-      - terraform apply --auto-approve
+      - pwd
+#      - terraform apply --auto-approve
