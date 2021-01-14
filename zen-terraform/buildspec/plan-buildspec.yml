@@ -1,0 +1,10 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - zen-terraform/terraform init
+      - zen-terraform/terraform validate
+  
+  build:
+    commands:
+      - zen-terraform/terraform apply --auto-approve
