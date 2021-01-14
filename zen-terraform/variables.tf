@@ -5,3 +5,7 @@ variable codestar_connector_credentials {
 variable dockerhub_credentials{
     type = string
 }
+
+variable "cluster-name" {
+  type    = string
+}
