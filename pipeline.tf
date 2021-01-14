@@ -37,7 +37,7 @@ resource "aws_codebuild_project" "tf-apply" {
     compute_type                = "BUILD_GENERAL1_SMALL"
     image                       = "aws/codebuild/standard:3.0"
     type                        = "LINUX_CONTAINER"
-    image_pull_credentials_type = "SERVICE_ROLE"
+    image_pull_credentials_type = "CODEBUILD"
     privileged_mode             = true
  }
  source {
