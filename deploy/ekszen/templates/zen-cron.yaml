@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: 042002498327.dkr.ecr.eu-north-1.amazonaws.com/spark_php:v1
+            imagePullPolicy: IfNotPresent
+            args:
+            - /bin/sh
+            - -c
+            - php /var/www/html/artisan schedule:run 1>> /dev/null 2>&1; echo Hello from the Kubernetes cluster
+          restartPolicy: OnFailure
